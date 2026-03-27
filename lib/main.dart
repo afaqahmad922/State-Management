@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:state_management/Add%20to%20Cart.dart';
 import 'package:state_management/State%20Management.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: state_Management(),
+      home: add_Cart(),
     );
   }
 }
