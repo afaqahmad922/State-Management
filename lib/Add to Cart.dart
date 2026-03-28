@@ -11,6 +11,11 @@ class add_Cart extends StatefulWidget {
 
 class _add_CartState extends State<add_Cart> {
   List<String> cartItems = [];
+  int quantity = 0;
+  int quantity1 = 0;
+  int quantity2 = 0;
+  int quantity3 = 0;
+  int quantity4 = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +88,7 @@ class _add_CartState extends State<add_Cart> {
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
             child: Divider(color: Colors.black, thickness: 1),
           ),
+
           Padding(
             padding: const EdgeInsets.only(left: 24, top: 40, right: 24),
             child: Row(
@@ -90,18 +96,28 @@ class _add_CartState extends State<add_Cart> {
               children: [
                 Text(
                   'Item1',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      cartItems.add("Item1");
-                    });
-                  },
-                  icon: Icon(Icons.add),
-                  style: IconButton.styleFrom(
-                    backgroundColor: Colors.yellowAccent,
-                  ),
+                Row(
+                  children: [
+                    IconButton(onPressed: (){
+                      setState(() {
+                        if (quantity>0) {
+                          quantity--;
+                          cartItems.remove("Item1");
+                        }
+                      });
+                    }, icon: Icon(Icons.remove), style: IconButton.styleFrom(backgroundColor: Colors.blueGrey ,foregroundColor: Colors.white),),
+                    SizedBox(width: 8,),
+                    Text(quantity.toString(), style: TextStyle(fontSize: 20),),
+                    SizedBox(width: 8,),
+                    IconButton(onPressed: (){
+                      setState(() {
+                        quantity++;
+                        cartItems.add("Item1");
+                      });
+                    },  icon: Icon(Icons.add), style: IconButton.styleFrom(backgroundColor: Colors.deepOrangeAccent, foregroundColor: Colors.white)),
+                  ],
                 ),
               ],
             ),
@@ -113,18 +129,26 @@ class _add_CartState extends State<add_Cart> {
               children: [
                 Text(
                   'Item2',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      cartItems.add("Item2");
-                    });
-                  },
-                  icon: Icon(Icons.add),
-                  style: IconButton.styleFrom(
-                    backgroundColor: Colors.yellowAccent,
-                  ),
+                Row(
+                  children: [
+                    IconButton(onPressed: (){
+                      setState(() {
+                        if (quantity1>0) quantity1--;
+                        cartItems.remove("Item2");
+                      });
+                    }, icon: Icon(Icons.remove), style: IconButton.styleFrom(backgroundColor: Colors.blueGrey ,foregroundColor: Colors.white),),
+                    SizedBox(width: 8,),
+                    Text(quantity1.toString(), style: TextStyle(fontSize: 20),),
+                    SizedBox(width: 8,),
+                    IconButton(onPressed: (){
+                      setState(() {
+                        quantity1++;
+                        cartItems.add("Item2");
+                      });
+                    },  icon: Icon(Icons.add), style: IconButton.styleFrom(backgroundColor: Colors.deepOrangeAccent, foregroundColor: Colors.white)),
+                  ],
                 ),
               ],
             ),
@@ -136,18 +160,26 @@ class _add_CartState extends State<add_Cart> {
               children: [
                 Text(
                   'Item3',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      cartItems.add("Item3");
-                    });
-                  },
-                  icon: Icon(Icons.add),
-                  style: IconButton.styleFrom(
-                    backgroundColor: Colors.yellowAccent,
-                  ),
+                Row(
+                  children: [
+                    IconButton(onPressed: (){
+                      setState(() {
+                        if (quantity2>0) quantity2--;
+                        cartItems.remove("Item3");
+                      });
+                    }, icon: Icon(Icons.remove), style: IconButton.styleFrom(backgroundColor: Colors.blueGrey ,foregroundColor: Colors.white),),
+                    SizedBox(width: 8,),
+                    Text(quantity2.toString(), style: TextStyle(fontSize: 20),),
+                    SizedBox(width: 8,),
+                    IconButton(onPressed: (){
+                      setState(() {
+                        quantity2++;
+                        cartItems.add("Item3");
+                      });
+                    },  icon: Icon(Icons.add), style: IconButton.styleFrom(backgroundColor: Colors.deepOrangeAccent, foregroundColor: Colors.white)),
+                  ],
                 ),
               ],
             ),
@@ -159,19 +191,27 @@ class _add_CartState extends State<add_Cart> {
               children: [
                 Text(
                   'Item4',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      cartItems.add("Item4");
-                    });
-                  },
-                  icon: Icon(Icons.add),
-                  style: IconButton.styleFrom(
-                    backgroundColor: Colors.yellowAccent,
-                  ),
-                ),
+                Row(
+                  children: [
+                    IconButton(onPressed: (){
+                      setState(() {
+                        if (quantity3>0) quantity3--;
+                        cartItems.remove("Item4");
+                      });
+                    }, icon: Icon(Icons.remove), style: IconButton.styleFrom(backgroundColor: Colors.blueGrey ,foregroundColor: Colors.white),),
+                    SizedBox(width: 8,),
+                    Text(quantity3.toString(), style: TextStyle(fontSize: 20),),
+                    SizedBox(width: 8,),
+                    IconButton(onPressed: (){
+                      setState(() {
+                        quantity3++;
+                        cartItems.add("Item4");
+                      });
+                    },  icon: Icon(Icons.add), style: IconButton.styleFrom(backgroundColor: Colors.deepOrangeAccent, foregroundColor: Colors.white)),
+                  ],
+                )
               ],
             ),
           ),
@@ -182,18 +222,26 @@ class _add_CartState extends State<add_Cart> {
               children: [
                 Text(
                   'Item5',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      cartItems.add("Item5");
-                    });
-                  },
-                  icon: Icon(Icons.add),
-                  style: IconButton.styleFrom(
-                    backgroundColor: Colors.yellowAccent,
-                  ),
+                Row(
+                  children: [
+                    IconButton(onPressed: (){
+                      setState(() {
+                        if (quantity4>0) quantity4--;
+                        cartItems.remove("Item5");
+                      });
+                    }, icon: Icon(Icons.remove), style: IconButton.styleFrom(backgroundColor: Colors.blueGrey ,foregroundColor: Colors.white),),
+                    SizedBox(width: 8,),
+                    Text(quantity4.toString(), style: TextStyle(fontSize: 20),),
+                    SizedBox(width: 8,),
+                    IconButton(onPressed: (){
+                      setState(() {
+                        quantity4++;
+                        cartItems.add("Item5");
+                      });
+                    }, icon: Icon(Icons.add), style: IconButton.styleFrom(backgroundColor: Colors.deepOrangeAccent, foregroundColor: Colors.white)),
+                  ],
                 ),
               ],
             ),
