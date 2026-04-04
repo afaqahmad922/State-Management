@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'Cart Page.dart';
 import 'Cart_Controller.dart';
 
 class CartScreen extends StatelessWidget {
@@ -22,7 +23,11 @@ class CartScreen extends StatelessWidget {
               return Stack(
                 alignment: Alignment.topRight,
                 children: [
-                  const Icon(Icons.shopping_cart, size: 42),
+                  GestureDetector(
+                      onTap: () {
+                        Get.to(() => CartPage());
+                      },
+                      child: const Icon(Icons.shopping_cart, size: 42)),
 
                   if (controller.totalItems > 0)
                     Container(
