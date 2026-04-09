@@ -3,12 +3,15 @@ import 'dart:ffi';
 import 'package:get/get.dart';
 
 class CartController extends GetxController {
-  var itemCounts = [0, 0, 0].obs;
+  var itemCounts = [0, 0, 0 , 0, 0, 0].obs;
 
   final List<String> itemNames = [
     "Item 1",
     "Item 2",
     "Item 3",
+    "Item 4",
+    "Item 5",
+    "Item 6",
   ];
 
   int get totalItems => itemCounts.reduce((a, b) => a + b);
